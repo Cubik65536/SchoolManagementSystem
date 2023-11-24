@@ -18,7 +18,7 @@ public class Student {
     private int courseNum;
 
     /**
-     * Constructor. Initialize the id with nextId and
+     * Constructor. Initialize the id based on the nextId and
      * last name, first name, and department with arguments.
      * @param lastName The first name of the student.
      * @param firstName The last name of the student.

@@ -14,7 +14,7 @@ public class Teacher {
 
 
     /**
-     * Constructor. Initialize the id with nextId and other fields with the arguments.
+     * Constructor. Initialize the id based on the nextId and other fields with the arguments.
      * @param lastName The last name of the teacher.
      * @param firstName The first name of the teacher.
      * @param department The department of the teacher.

@@ -11,7 +11,7 @@ public class Department {
     private String departmentName;
 
     /**
-     * Constructor. Initialize the id with nextId and the name of the department with the argument.
+     * Constructor. Initialize the id based on the nextId and the name of the department with the argument.
      * @param departmentName The name of the department.
      */
     public Department(String departmentName) {

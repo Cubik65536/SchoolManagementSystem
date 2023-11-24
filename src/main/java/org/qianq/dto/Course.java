@@ -19,7 +19,7 @@ public class Course {
     private String courseName;
 
     /**
-     * Constructor. Initialize the id with nextId and
+     * Constructor. Initialize the id based on the nextId and
      * credit, department, and course name with arguments.
      * @param credit The credit of this course.
      * @param department The department this course belongs to.
