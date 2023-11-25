@@ -38,9 +38,9 @@ public class SchoolManagementSystem {
      * Add a student based on his name and the name of his department.
      * @param lastName The last name of the student.
      * @param firstName The first name of the student.
-     * @param department The name of the department of the student.
+     * @param departmentId The ID of the department of the student.
      */
-    public void addStudent(String lastName, String firstName, String department) {
+    public void addStudent(String lastName, String firstName, String departmentId) {
 
     }
 
@@ -48,9 +48,9 @@ public class SchoolManagementSystem {
      * Add a teacher based on his name and the name of his department.
      * @param lastName The last name of the teacher.
      * @param firstName The first name of the teacher.
-     * @param department The name of the department of the teacher.
+     * @param departmentId The ID of the department of the teacher.
      */
-    public void addTeacher(String lastName, String firstName, String department) {
+    public void addTeacher(String lastName, String firstName, String departmentId) {
 
     }
 
@@ -58,9 +58,107 @@ public class SchoolManagementSystem {
      * Add a course based on its name, its credit, and the name of its department.
      * @param courseName The name of the course.
      * @param credit The credit given by the course.
-     * @param department The name of the department of the course.
+     * @param departmentId The ID of the department of the course.
      */
-    public void addCourse(String courseName, double credit, String department) {
+    public void addCourse(String courseName, double credit, String departmentId) {
+
+    }
+
+    /**
+     * Display all departments in a school.
+     * Only departments that are not null will be displayed.
+     */
+    public void displayDepartment() {
+
+    }
+
+    /**
+     * Display all students in a school.
+     * Only students that are not null will be displayed.
+     * The name of the courses and the name of the department are only displayed if there is any.
+     */
+    public void displayStudents() {
+
+    }
+
+    /**
+     * Display all teachers in a school.
+     * Only teachers that are not null will be displayed.
+     * The name of the courses and the name of the department are only displayed if there is any.
+     */
+    public void displayTeachers() {
+
+    }
+
+    /**
+     * Display all courses in a school.
+     * Only courses that are not null will be displayed.
+     * The name of the teacher, the students, and the department are only displayed if there is any.
+     */
+    public void displayCourses() {
+
+    }
+
+    /**
+     * Search a department in the departments based on a departmentId.
+     * If the departmentId does not match with any department, return null.
+     * @param departmentId The department's ID.
+     * @return The department with corresponding ID, null if nothing is corresponding.
+     */
+    public Department findDepartment(String departmentId) {
+        return null;
+    }
+
+    /**
+     * Search a student in the students based on a studentId.
+     * If the studentId does not match with any student, return null.
+     * @param studentId The student's ID.
+     * @return The student with corresponding ID, null if nothing is corresponding.
+     */
+    public Student findStudent(String studentId) {
+        return null;
+    }
+
+    /**
+     * Search a teacher in the teachers based on a teacherId.
+     * If the teacherId does not match with any teacher, return null.
+     * @param teacherId The teacher's ID.
+     * @return The teacher with corresponding ID, null if nothing is corresponding.
+     */
+    public Teacher findTeacher(String teacherId) {
+        return null;
+    }
+
+    /**
+     * Search a course in the courses based on a courseId.
+     * If the courseId does not match with any course, return null.
+     * @param courseId The course's ID.
+     * @return The course with corresponding ID, null if nothing is corresponding.
+     */
+    public Course findCourse(String courseId) {
+        return null;
+    }
+
+    /**
+     * Assign a teacher to a specific course (based on teacherId and courseId).
+     * If no corresponding teacher or course is found, a message will be printed.
+     * @param teacherId The teacher's ID to assign to the course.
+     * @param courseId The course's ID.
+     */
+    public void assignTeacherToCourse(String teacherId, String courseId) {
+
+    }
+
+    /**
+     * Register a student to a course (based on studentId and courseId).
+     * If no corresponding student or course is found, a message will be printed.
+     * If the student has already registered to a max amount (5) of courses, a message will be printed.
+     * If there's already a max amount (5) of student registered to the course, a message will be printed.
+     * If the student already registered to the corresponding course, a message will be printed.
+     * @param studentId The ID of the student registered to the course.
+     * @param courseId The course's ID.
+     */
+    public void registerCourseForStudent(String studentId, String courseId) {
 
     }
 }
