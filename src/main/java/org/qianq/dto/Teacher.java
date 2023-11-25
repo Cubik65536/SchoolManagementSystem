@@ -7,10 +7,10 @@ package org.qianq.dto;
 public class Teacher {
     private static int nextId = 1;
 
+    private String id;
     private String lastName;
     private String firstName;
     private Department department;
-    private String id;
 
 
     /**
@@ -20,10 +20,10 @@ public class Teacher {
      * @param department The department of the teacher.
      */
     public Teacher(String lastName, String firstName, Department department) {
+        this.id = String.format("T%03d", nextId++);
         this.lastName = lastName;
         this.firstName = firstName;
         this.department = department;
-        this.id = String.format("T%03d", nextId++);
     }
 
     /**
@@ -33,10 +33,10 @@ public class Teacher {
     @Override
     public String toString() {
         return "Teacher{" +
-                "lastName='" + lastName + '\'' +
+                "id='" + id + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", department=" + department +
-                ", id='" + id + '\'' +
                 '}';
     }
 }
