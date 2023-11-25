@@ -25,4 +25,42 @@ public class SchoolManagementSystem {
         this.teachers = new Teacher[MAX_TEACHER_NUM];
         this.courses = new Course[MAX_COURSE_NUM];
     }
+
+    /**
+     * Add a department based on its name.
+     * @param name The name of the new department.
+     */
+    public void addDepartment(String name) {
+
+    }
+
+    /**
+     * Add a student based on his name and the name of his department.
+     * @param lastName The last name of the student.
+     * @param firstName The first name of the student.
+     * @param department The name of the department of the student.
+     */
+    public void addStudent(String lastName, String firstName, String department) {
+
+    }
+
+    /**
+     * Add a teacher based on his name and the name of his department.
+     * @param lastName The last name of the teacher.
+     * @param firstName The first name of the teacher.
+     * @param department The name of the department of the teacher.
+     */
+    public void addTeacher(String lastName, String firstName, String department) {
+
+    }
+
+    /**
+     * Add a course based on its name, its credit, and the name of its department.
+     * @param courseName The name of the course.
+     * @param credit The credit given by the course.
+     * @param department The name of the department of the course.
+     */
+    public void addCourse(String courseName, double credit, String department) {
+
+    }
 }
