@@ -6,4 +6,4 @@ A School Management System that supports the management of departments, courses,
 
 ## Class Diagram
 
-![Class Diagram](./SchoolManagementSystem-ClassDiagram.jpg)
+![Class Diagram](src/main/resources/ClassDiagram.jpg)
