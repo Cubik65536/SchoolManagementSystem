@@ -1,11 +1,14 @@
 package org.qianq.dto;
 
+import lombok.Getter;
+
 import java.util.Arrays;
 
 /**
  * Course of the school.
  * @author Qian Qian (2362597)
  */
+@Getter
 public class Course {
     private static final int MAX_STUDENT_NUM = 5;
     private static int nextId = 1;
@@ -38,14 +41,18 @@ public class Course {
      */
     @Override
     public String toString() {
-        return "Course{" +
+        String courseString = "Course{" +
                 "id='" + id + '\'' +
                 ", courseName='" + courseName + '\'' +
                 ", credit=" + credit +
-                ", department=" + department +
                 ", teacher=" + teacher +
-                ", students=" + Arrays.toString(students) +
-                ", studentNum=" + studentNum +
-                '}';
+                ", department=" + department +
+                ", students=[";
+
+        for (Student student : students) {
+            courseString += student.getFirstName() + ' ' + student.getLastName() + ", ";
+        }
+
+        return courseString + "]}";
     }
 }
