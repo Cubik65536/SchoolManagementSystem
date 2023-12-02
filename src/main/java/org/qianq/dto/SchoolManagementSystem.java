@@ -11,6 +11,7 @@ public class SchoolManagementSystem {
     private static final int MAX_COURSE_NUM = 30;
 
     private Department[] departments;
+    private int departmentCount = 0;
     private Student[] students;
     private Teacher[] teachers;
     private Course[] courses;
@@ -31,7 +32,13 @@ public class SchoolManagementSystem {
      * @param name The name of the new department.
      */
     public void addDepartment(String name) {
-
+        if (departmentCount < MAX_DEPARTMENT_NUM) {
+            departments[departmentCount] = new Department(name);
+            System.out.println("Add department " + departments[departmentCount] + " successfully.");
+            departmentCount++;
+        } else {
+            System.out.println("Max department reached, add a new department failed.");
+        }
     }
 
     /**
@@ -69,7 +76,9 @@ public class SchoolManagementSystem {
      * Only departments that are not null will be displayed.
      */
     public void displayDepartment() {
-
+        for (Department department : departments) {
+            System.out.println(department);
+        }
     }
 
     /**
