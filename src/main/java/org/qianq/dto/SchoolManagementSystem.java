@@ -11,8 +11,9 @@ public class SchoolManagementSystem {
     private static final int MAX_COURSE_NUM = 30;
 
     private Department[] departments;
-    private int departmentCount = 0;
+    private int departmentCount;
     private Student[] students;
+    private int studentCount;
     private Teacher[] teachers;
     private Course[] courses;
 
@@ -22,7 +23,9 @@ public class SchoolManagementSystem {
      */
     public SchoolManagementSystem() {
         this.departments = new Department[MAX_DEPARTMENT_NUM];
+        departmentCount = 0;
         this.students = new Student[MAX_STUDENT_NUM];
+        studentCount = 0;
         this.teachers = new Teacher[MAX_TEACHER_NUM];
         this.courses = new Course[MAX_COURSE_NUM];
     }
@@ -48,7 +51,14 @@ public class SchoolManagementSystem {
      * @param departmentId The ID of the department of the student.
      */
     public void addStudent(String lastName, String firstName, String departmentId) {
-
+        Department department = findDepartment(departmentId);
+        if (studentCount < MAX_STUDENT_NUM) {
+            students[studentCount] = new Student(lastName, firstName, department);
+            System.out.println("Student " + students[studentCount] + " added successfully.");
+            studentCount++;
+        } else {
+            System.out.println("Max student reached, add a new student failed.");
+        }
     }
 
     /**
@@ -77,7 +87,9 @@ public class SchoolManagementSystem {
      */
     public void displayDepartment() {
         for (Department department : departments) {
-            System.out.println(department);
+            if (department != null) {
+                System.out.println(department);
+            }
         }
     }
 
@@ -87,7 +99,11 @@ public class SchoolManagementSystem {
      * The name of the courses and the name of the department are only displayed if there is any.
      */
     public void displayStudents() {
-
+        for (Student student : students) {
+            if (student != null) {
+                System.out.println(student);
+            }
+        }
     }
 
     /**

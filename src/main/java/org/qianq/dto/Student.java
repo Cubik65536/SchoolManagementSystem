@@ -32,6 +32,8 @@ public class Student {
         this.lastName = lastName;
         this.firstName = firstName;
         this.department = department;
+        this.courses = new Course[MAX_COURSE_NUM];
+        this.courseNum = 0;
     }
 
     /**
@@ -50,7 +52,9 @@ public class Student {
                 ", courses=[";
 
         for (Course course : courses) {
-            studentString += course.getCourseName() + ", ";
+            if (course != null) {
+                studentString += course.getCourseName() + ", ";
+            }
         }
 
         return studentString + "]}";
