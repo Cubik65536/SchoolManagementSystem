@@ -40,7 +40,7 @@ public class Main {
         // b) Add a new student failed
         boolean addNewStudentFailedTest = false;
         if (addNewStudentFailedTest) {
-            for (int i = 0; i < 194; i++) {
+            for (int i = 0; i < 195; i++) {
                 schoolManagementSystem.addStudent(String.valueOf(i), String.valueOf(i), "D001");
             }
             // Should Fail once
@@ -87,7 +87,7 @@ public class Main {
         // b) Add a new course failed
         boolean addNewCourseFailedTest = false;
         if (addNewCourseFailedTest) {
-            for (int i = 0; i < 24; i++) {
+            for (int i = 0; i < 25; i++) {
                 schoolManagementSystem.addCourse(String.valueOf(i), 3.0, "D001");
             }
             // Should Fail once

@@ -17,6 +17,7 @@ public class SchoolManagementSystem {
     private Teacher[] teachers;
     private int teacherCount;
     private Course[] courses;
+    private int courseCount;
 
     /**
      * A NoArgsConstructor that initialize the School Management System
@@ -30,6 +31,7 @@ public class SchoolManagementSystem {
         this.teachers = new Teacher[MAX_TEACHER_NUM];
         teacherCount = 0;
         this.courses = new Course[MAX_COURSE_NUM];
+        courseCount = 0;
     }
 
     /**
@@ -87,7 +89,14 @@ public class SchoolManagementSystem {
      * @param departmentId The ID of the department of the course.
      */
     public void addCourse(String courseName, double credit, String departmentId) {
-
+        Department department = findDepartment(departmentId);
+        if (courseCount < MAX_COURSE_NUM) {
+            courses[courseCount] = new Course(courseName, credit, department);
+            System.out.println("Course " + courses[courseCount] + " added successfully.");
+            courseCount++;
+        } else {
+            System.out.println("Max course reached, add a new course failed.");
+        }
     }
 
     /**
@@ -134,7 +143,11 @@ public class SchoolManagementSystem {
      * The name of the teacher, the students, and the department are only displayed if there is any.
      */
     public void displayCourses() {
-
+        for (Course course : courses) {
+            if (course != null) {
+                System.out.println(course);
+            }
+        }
     }
 
     /**

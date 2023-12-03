@@ -33,6 +33,9 @@ public class Course {
         this.courseName = courseName;
         this.credit = credit;
         this.department = department;
+        this.teacher = null;
+        this.students = new Student[MAX_STUDENT_NUM];
+        this.studentNum = 0;
     }
 
     /**
@@ -50,7 +53,9 @@ public class Course {
                 ", students=[";
 
         for (Student student : students) {
-            courseString += student.getFirstName() + ' ' + student.getLastName() + ", ";
+            if (student != null) {
+                courseString += student.getFirstName() + ' ' + student.getLastName() + ", ";
+            }
         }
 
         return courseString + "]}";
