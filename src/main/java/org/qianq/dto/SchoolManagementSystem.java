@@ -15,6 +15,7 @@ public class SchoolManagementSystem {
     private Student[] students;
     private int studentCount;
     private Teacher[] teachers;
+    private int teacherCount;
     private Course[] courses;
 
     /**
@@ -27,6 +28,7 @@ public class SchoolManagementSystem {
         this.students = new Student[MAX_STUDENT_NUM];
         studentCount = 0;
         this.teachers = new Teacher[MAX_TEACHER_NUM];
+        teacherCount = 0;
         this.courses = new Course[MAX_COURSE_NUM];
     }
 
@@ -68,7 +70,14 @@ public class SchoolManagementSystem {
      * @param departmentId The ID of the department of the teacher.
      */
     public void addTeacher(String lastName, String firstName, String departmentId) {
-
+        Department department = findDepartment(departmentId);
+        if (teacherCount < MAX_TEACHER_NUM) {
+            teachers[teacherCount] = new Teacher(lastName, firstName, department);
+            System.out.println("Teacher " + teachers[teacherCount] + " added successfully.");
+            teacherCount++;
+        } else {
+            System.out.println("Max teacher reached, add a new teacher failed.");
+        }
     }
 
     /**
@@ -112,7 +121,11 @@ public class SchoolManagementSystem {
      * The name of the courses and the name of the department are only displayed if there is any.
      */
     public void displayTeachers() {
-
+        for (Teacher teacher : teachers) {
+            if (teacher != null) {
+                System.out.println(teacher);
+            }
+        }
     }
 
     /**
