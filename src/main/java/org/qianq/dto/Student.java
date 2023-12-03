@@ -22,7 +22,6 @@ public class Student {
     /**
      * Constructor. Initialize the id based on the nextId and
      * last name, first name, and department with arguments.
-     *
      * @param lastName   The first name of the student.
      * @param firstName  The last name of the student.
      * @param department The department of the student.
@@ -37,8 +36,31 @@ public class Student {
     }
 
     /**
+     * Register a course for this student.
+     * @param course The course to be registered.
+     * @return True if the course is registered successfully, false otherwise.
+     */
+    public boolean registerCourse(Course course) {
+        if (courseNum < MAX_COURSE_NUM) {
+            for (int i = 0; i < courseNum; i++) {
+                if (course == courses[i]) { // Using == here because the same course registered will be the exact same object and can be compared by ==.
+                    System.out.println("Student " + this.id + " has already registered course "  + course.getId()
+                            + ", register course " + course.getId() + " for student " + this.id + " failed.");
+                    return false;
+                }
+            }
+            courses[courseNum] = course;
+            courseNum++;
+            return true;
+        } else {
+            System.out.println("Student " + this.id + " has registered " + MAX_COURSE_NUM
+                    + " courses, register course for student " + this.id + " failed.");
+            return false;
+        }
+    }
+
+    /**
      * Returns a string that represents this student.
-     *
      * @return The string that represents this student.
      */
     @Override

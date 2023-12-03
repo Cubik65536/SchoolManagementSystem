@@ -231,6 +231,7 @@ public class SchoolManagementSystem {
     public void assignTeacherToCourse(String teacherId, String courseId) {
         Teacher teacher = findTeacher(teacherId);
         Course course = findCourse(courseId);
+
         if (teacher == null) {
             System.out.println("Cannot find any teacher match with teacherId " + teacherId +
                     ", modify teacher for course " + courseId + " failed.");
@@ -241,6 +242,7 @@ public class SchoolManagementSystem {
                     ", modify teacher for course " + courseId + " failed.");
             return;
         }
+
         course.setTeacher(teacher);
         System.out.println(course + " teacher info updated successfully.");
     }
@@ -255,6 +257,27 @@ public class SchoolManagementSystem {
      * @param courseId The course's ID.
      */
     public void registerCourseForStudent(String studentId, String courseId) {
+        Student student = findStudent(studentId);
+        Course course = findCourse(courseId);
 
+        if (student == null) {
+            System.out.println("Cannot find any student match with studentId " + studentId +
+                    ", register course for student " + studentId + " failed.");
+            return;
+        }
+        if (course == null) {
+            System.out.println("Cannot find any course match with courseId " + courseId +
+                    ", register course for student " + studentId + " failed.");
+            return;
+        }
+
+        if (!student.registerCourse(course) || !course.addStudent(student)) {
+            // If any of these process failed, return so no success message will be printed.
+            return;
+        }
+
+        System.out.println("Student register course successfully");
+        System.out.println("Latest student info: " + student);
+        System.out.println("Latest course info: " + course);
     }
 }

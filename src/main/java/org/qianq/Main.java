@@ -104,27 +104,34 @@ public class Main {
         schoolManagementSystem.assignTeacherToCourse("T000", "C001");
 
         System.out.println();
+        System.out.println();
 
         // 9. Student register course
         // a) Student register course successfully.
         schoolManagementSystem.registerCourseForStudent("S001", "C001");
+        System.out.println();
+        // f) Student register course failed, student has registered that course.
+        schoolManagementSystem.registerCourseForStudent("S001", "C001");
+        System.out.println();
         // b) Student register course failed, studentId not found.
         schoolManagementSystem.registerCourseForStudent("S000", "C001");
+        System.out.println();
         // c) Student register course failed, courseId not found.
         schoolManagementSystem.registerCourseForStudent("S001", "C000");
+        System.out.println();
         // d) Student register course failed, student has registered max courses.
         schoolManagementSystem.registerCourseForStudent("S001", "C002");
         schoolManagementSystem.registerCourseForStudent("S001", "C003");
         schoolManagementSystem.registerCourseForStudent("S001", "C004");
         schoolManagementSystem.registerCourseForStudent("S001", "C005");
         schoolManagementSystem.registerCourseForStudent("S001", "C006"); // Fail Here
+        System.out.println();
         // e) Student register course failed, course is fully registered.
         schoolManagementSystem.registerCourseForStudent("S002", "C001");
         schoolManagementSystem.registerCourseForStudent("S003", "C001");
         schoolManagementSystem.registerCourseForStudent("S004", "C001");
         schoolManagementSystem.registerCourseForStudent("S005", "C001");
         schoolManagementSystem.registerCourseForStudent("S006", "C001"); // Fail Here
-        // f) Student register course failed, student has registered that course.
-        schoolManagementSystem.registerCourseForStudent("S001", "C001");
+        System.out.println();
     }
 }
