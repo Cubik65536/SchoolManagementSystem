@@ -1,5 +1,8 @@
 package org.qianq.dto;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 /**
  * A School Management System
  * @author Qian Qian (2362597)
@@ -158,8 +161,10 @@ public class SchoolManagementSystem {
      */
     public Department findDepartment(String departmentId) {
         for (Department department : departments) {
-            if (department.getId().equals(departmentId)) {
-                return department;
+            if (department != null) {
+                if (department.getId().equals(departmentId)) {
+                    return department;
+                }
             }
         }
 
@@ -174,8 +179,10 @@ public class SchoolManagementSystem {
      */
     public Student findStudent(String studentId) {
         for (Student student : students) {
-            if (student.getId().equals(studentId)) {
-                return student;
+            if (student != null) {
+                if (student.getId().equals(studentId)) {
+                    return student;
+                }
             }
         }
 
@@ -190,8 +197,10 @@ public class SchoolManagementSystem {
      */
     public Teacher findTeacher(String teacherId) {
         for (Teacher teacher : teachers) {
-            if (teacher.getId().equals(teacherId)) {
-                return teacher;
+            if (teacher != null) {
+                if (teacher.getId().equals(teacherId)) {
+                    return teacher;
+                }
             }
         }
 
@@ -206,8 +215,10 @@ public class SchoolManagementSystem {
      */
     public Course findCourse(String courseId) {
         for (Course course : courses) {
-            if (course.getId().equals(courseId)) {
-                return course;
+            if (course != null) {
+                if (course.getId().equals(courseId)) {
+                    return course;
+                }
             }
         }
 
@@ -221,7 +232,20 @@ public class SchoolManagementSystem {
      * @param courseId The course's ID.
      */
     public void assignTeacherToCourse(String teacherId, String courseId) {
-
+        Teacher teacher = findTeacher(teacherId);
+        Course course = findCourse(courseId);
+        if (teacher == null) {
+            System.out.println("Cannot find any teacher match with teacherId " + teacherId +
+                    ", modify teacher for course " + courseId + " failed.");
+            return;
+        }
+        if (course == null) {
+            System.out.println("Cannot find any course match with courseId " + courseId +
+                    ", modify teacher for course " + courseId + " failed.");
+            return;
+        }
+        course.setTeacher(teacher);
+        System.out.println(course + " teacher info updated successfully.");
     }
 
     /**

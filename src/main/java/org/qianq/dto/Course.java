@@ -37,6 +37,14 @@ public class Course {
     }
 
     /**
+     * Set the teacher for this course.
+     * @param teacher The teacher for this course.
+     */
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+    /**
      * Returns a string that represents this course.
      * @return The string that represents this course.
      */
@@ -45,10 +53,16 @@ public class Course {
         String courseString = "Course{" +
                 "id='" + id + '\'' +
                 ", courseName='" + courseName + '\'' +
-                ", credit=" + credit +
-                ", teacher=" + teacher +
-                ", department=" + department +
-                ", students=[";
+                ", credit=" + credit;
+
+        if (teacher != null) {
+            courseString += ", teacher=" + teacher.getLastName() + ' ' + teacher.getFirstName();
+        } else {
+            courseString += ", teacher=null";
+        }
+
+
+        courseString += ", department=" + department + ", students=[";
 
         for (Student student : students) {
             if (student != null) {
