@@ -1,9 +1,12 @@
 package org.qianq.dto;
 
+import lombok.Getter;
+
 /**
  * Teacher of the school.
  * @author Qian Qian (2362597)
  */
+@Getter
 public class Teacher {
     private static int nextId = 1;
 

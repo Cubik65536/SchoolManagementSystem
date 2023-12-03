@@ -1,9 +1,12 @@
 package org.qianq.dto;
 
+import lombok.Getter;
+
 /**
  * Departments of the school.
  * @author Qian Qian (2362597)
  */
+@Getter
 public class Department {
     private static int nextId = 1;
 

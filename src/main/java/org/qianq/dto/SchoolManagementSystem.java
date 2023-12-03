@@ -115,6 +115,12 @@ public class SchoolManagementSystem {
      * @return The department with corresponding ID, null if nothing is corresponding.
      */
     public Department findDepartment(String departmentId) {
+        for (Department department : departments) {
+            if (department.getId().equals(departmentId)) {
+                return department;
+            }
+        }
+
         return null;
     }
 
@@ -125,6 +131,12 @@ public class SchoolManagementSystem {
      * @return The student with corresponding ID, null if nothing is corresponding.
      */
     public Student findStudent(String studentId) {
+        for (Student student : students) {
+            if (student.getId().equals(studentId)) {
+                return student;
+            }
+        }
+
         return null;
     }
 
@@ -135,6 +147,12 @@ public class SchoolManagementSystem {
      * @return The teacher with corresponding ID, null if nothing is corresponding.
      */
     public Teacher findTeacher(String teacherId) {
+        for (Teacher teacher : teachers) {
+            if (teacher.getId().equals(teacherId)) {
+                return teacher;
+            }
+        }
+
         return null;
     }
 
@@ -145,6 +163,12 @@ public class SchoolManagementSystem {
      * @return The course with corresponding ID, null if nothing is corresponding.
      */
     public Course findCourse(String courseId) {
+        for (Course course : courses) {
+            if (course.getId().equals(courseId)) {
+                return course;
+            }
+        }
+
         return null;
     }
 
