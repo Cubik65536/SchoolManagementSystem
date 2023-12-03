@@ -1,8 +1,5 @@
 package org.qianq.dto;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 /**
  * A School Management System
  * @author Qian Qian (2362597)
