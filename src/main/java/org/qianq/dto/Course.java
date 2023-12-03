@@ -2,8 +2,6 @@ package org.qianq.dto;
 
 import lombok.Getter;
 
-import java.util.Arrays;
-
 /**
  * Course of the school.
  * @author Qian Qian (2362597)
