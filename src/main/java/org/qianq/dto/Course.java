@@ -51,8 +51,7 @@ public class Course {
      */
     public boolean addStudent(Student student) {
         if (studentNum < MAX_STUDENT_NUM) {
-            students[studentNum] = student;
-            studentNum++;
+            students[studentNum++] = student;
             return true;
         } else {
             System.out.println("Course " + this.id + " has been fully registered, register course "

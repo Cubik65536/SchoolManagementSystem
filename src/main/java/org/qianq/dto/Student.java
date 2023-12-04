@@ -49,8 +49,7 @@ public class Student {
                     return false;
                 }
             }
-            courses[courseNum] = course;
-            courseNum++;
+            courses[courseNum++] = course;
             return true;
         } else {
             System.out.println("Student " + this.id + " has registered " + MAX_COURSE_NUM
