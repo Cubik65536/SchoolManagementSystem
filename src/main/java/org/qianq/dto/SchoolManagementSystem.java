@@ -41,8 +41,7 @@ public class SchoolManagementSystem {
     public void addDepartment(String name) {
         if (departmentCount < MAX_DEPARTMENT_NUM) {
             departments[departmentCount] = new Department(name);
-            System.out.println("Add department " + departments[departmentCount] + " successfully.");
-            departmentCount++;
+            System.out.println("Add department " + departments[departmentCount++] + " successfully.");
         } else {
             System.out.println("Max department reached, add a new department failed.");
         }
@@ -58,8 +57,7 @@ public class SchoolManagementSystem {
         Department department = findDepartment(departmentId);
         if (studentCount < MAX_STUDENT_NUM) {
             students[studentCount] = new Student(lastName, firstName, department);
-            System.out.println("Student " + students[studentCount] + " added successfully.");
-            studentCount++;
+            System.out.println("Student " + students[studentCount++] + " added successfully.");
         } else {
             System.out.println("Max student reached, add a new student failed.");
         }
@@ -75,8 +73,7 @@ public class SchoolManagementSystem {
         Department department = findDepartment(departmentId);
         if (teacherCount < MAX_TEACHER_NUM) {
             teachers[teacherCount] = new Teacher(lastName, firstName, department);
-            System.out.println("Teacher " + teachers[teacherCount] + " added successfully.");
-            teacherCount++;
+            System.out.println("Teacher " + teachers[teacherCount++] + " added successfully.");
         } else {
             System.out.println("Max teacher reached, add a new teacher failed.");
         }
@@ -92,8 +89,7 @@ public class SchoolManagementSystem {
         Department department = findDepartment(departmentId);
         if (courseCount < MAX_COURSE_NUM) {
             courses[courseCount] = new Course(courseName, credit, department);
-            System.out.println("Course " + courses[courseCount] + " added successfully.");
-            courseCount++;
+            System.out.println("Course " + courses[courseCount++] + " added successfully.");
         } else {
             System.out.println("Max course reached, add a new course failed.");
         }
