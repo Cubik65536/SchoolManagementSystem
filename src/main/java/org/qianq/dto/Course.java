@@ -45,19 +45,20 @@ public class Course {
     }
 
     /**
+     * Check if the course has been fully registered.
+     * @return True if the course has been fully registered, false otherwise.
+     */
+    public boolean isFull() {
+        return studentNum == MAX_STUDENT_NUM;
+    }
+
+    /**
      * Add a student to this course.
      * @param student The student to be added.
      * @return True if the student is added successfully, false otherwise.
      */
-    public boolean addStudent(Student student) {
-        if (studentNum < MAX_STUDENT_NUM) {
-            students[studentNum++] = student;
-            return true;
-        } else {
-            System.out.println("Course " + this.id + " has been fully registered, register course "
-                    + this.id + " for student " + student.getId() + " failed.");
-            return false;
-        }
+    public void addStudent(Student student) {
+        students[studentNum++] = student;
     }
 
     /**

@@ -267,10 +267,24 @@ public class SchoolManagementSystem {
             return;
         }
 
-        if (!student.registerCourse(course) || !course.addStudent(student)) {
-            // If any of these process failed, return so no success message will be printed.
+        if (student.registeredMaxCourses()) {
+            System.out.println("Student " + studentId + " has registered " + Student.MAX_COURSE_NUM +
+                    " courses, register course for student " + studentId + " failed.");
             return;
         }
+        if (course.isFull()) {
+            System.out.println("Course " + courseId + " has been fully registered, register course "
+                    + courseId + " for student " + studentId + " failed.");
+            return;
+        }
+
+        if (!student.registerCourse(course)) {
+            // If the student has already registered to the course, the registerCourse method will return false.
+            // And in this case, abort the following process.
+            return;
+        }
+        // If the student has not registered to the course, add the student to the course.
+        course.addStudent(student);
 
         System.out.println("Student register course successfully");
         System.out.println("Latest student info: " + student);

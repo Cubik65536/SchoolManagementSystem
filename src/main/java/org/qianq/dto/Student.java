@@ -9,7 +9,7 @@ import lombok.Getter;
  */
 @Getter
 public class Student {
-    private static final int MAX_COURSE_NUM = 5;
+    public static final int MAX_COURSE_NUM = 5; // public because SchoolManagementSystem uses it to print messages.
     private static int nextId = 1;
 
     private String id;
@@ -36,26 +36,28 @@ public class Student {
     }
 
     /**
+     * Check if the student has registered the maximum amount of courses.
+     * @return True if the student has registered the maximum amount of courses, false otherwise.
+     */
+    public boolean registeredMaxCourses() {
+        return courseNum == MAX_COURSE_NUM;
+    }
+
+    /**
      * Register a course for this student.
      * @param course The course to be registered.
      * @return True if the course is registered successfully, false otherwise.
      */
     public boolean registerCourse(Course course) {
-        if (courseNum < MAX_COURSE_NUM) {
-            for (int i = 0; i < courseNum; i++) {
-                if (course == courses[i]) { // Using == here because the same course registered will be the exact same object and can be compared by ==.
-                    System.out.println("Student " + this.id + " has already registered course "  + course.getId()
-                            + ", register course " + course.getId() + " for student " + this.id + " failed.");
-                    return false;
-                }
+        for (int i = 0; i < courseNum; i++) {
+            if (course == courses[i]) { // Using == here because the same course registered will be the exact same object and can be compared by ==.
+                System.out.println("Student " + this.id + " has already registered course "  + course.getId()
+                        + ", register course " + course.getId() + " for student " + this.id + " failed.");
+                return false;
             }
-            courses[courseNum++] = course;
-            return true;
-        } else {
-            System.out.println("Student " + this.id + " has registered " + MAX_COURSE_NUM
-                    + " courses, register course for student " + this.id + " failed.");
-            return false;
         }
+        courses[courseNum++] = course;
+        return true;
     }
 
     /**
